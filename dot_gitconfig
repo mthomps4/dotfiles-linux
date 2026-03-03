@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Matt Thompson - NUC
+	email = matthew.thompson.a@gmail.com
+[core]
+	editor = nvim
