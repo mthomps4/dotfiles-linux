@@ -1,0 +1,52 @@
+Chezmoi Helpers & Quick Reference
+===================================
+
+## Aliases (in .zshrc)
+
+sync-dotfiles  — re-adds all changed managed files, commits, and pushes to GitHub
+                 chezmoi re-add && cd ~/.local/share/chezmoi && git add -A && git commit -m "syncing dotfiles" && git push && cd -
+
+## Common Commands
+
+chezmoi add ~/.some-file        — start tracking a new file
+chezmoi re-add                  — re-add all managed files that changed
+chezmoi edit ~/.some-file       — edit in source dir (then chezmoi apply to deploy)
+chezmoi apply                   — apply source dir changes to home
+chezmoi diff                    — preview what apply would change
+chezmoi managed                 — list all tracked files
+chezmoi cd                      — cd into source directory (~/.local/share/chezmoi)
+chezmoi update                  — pull latest from remote and apply
+chezmoi doctor                  — health check
+
+## Workflow
+
+Option A (edit directly, then sync):
+  1. nvim ~/.zshrc
+  2. sync-dotfiles
+
+Option B (edit via chezmoi):
+  1. chezmoi edit ~/.zshrc
+  2. chezmoi apply
+  3. sync-dotfiles
+
+## Setup on a New Machine
+
+chezmoi init --apply git@github.com:mthomps4/dotfiles-linux.git
+
+## Source Directory
+
+~/.local/share/chezmoi/
+
+## Tracked Files
+
+.zshrc                                          — ZSH config (Oh My Zsh, plugins, aliases, PATH)
+.bashrc                                         — Bash fallback
+.tmux.conf                                      — Tmux config (Catppuccin, keybinds, plugins)
+.gitconfig                                      — Git global config
+.config/git/ignore                              — Global gitignore
+.config/starship.toml                           — Starship prompt (Catppuccin Mocha)
+.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh — Syntax highlighting colors
+.tool-versions                                  — asdf managed language versions
+.asdfrc                                         — asdf config
+.default-gems                                   — auto-installed gems for new Ruby versions
+.default-npm-packages                           — auto-installed npm packages for new Node versions
