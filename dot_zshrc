@@ -58,6 +58,9 @@ alias masterprune='git branch | grep -v "master" | xargs git branch -D'
 alias grep_3000='lsof -i tcp:3000'
 alias rnew='rails new -d postgresql -c tailwind -j esbuild'
 
+# --- Chezmoi ---
+alias sync-dotfiles='chezmoi re-add && cd ~/.local/share/chezmoi && git add -A && git commit -m "syncing dotfiles" && git push && cd -'
+
 # --- FZF ---
 eval "$(fzf --zsh)"
 
