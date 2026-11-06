@@ -50,3 +50,4 @@ chezmoi init --apply git@github.com:mthomps4/dotfiles-linux.git
 .asdfrc                                         — asdf config
 .default-gems                                   — auto-installed gems for new Ruby versions
 .default-npm-packages                           — auto-installed npm packages for new Node versions
+.default-mix-commands                           — auto-run mix commands for new Elixir versions

@@ -67,5 +67,8 @@ alias sync-dotfiles='chezmoi re-add && cd ~/.local/share/chezmoi && git add -A &
 # --- FZF ---
 eval "$(fzf --zsh)"
 
+# --- Per-machine overrides (not managed by chezmoi) ---
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
 # --- Starship Prompt (must be last) ---
 eval "$(starship init zsh)"

@@ -5,3 +5,6 @@
 	email = matthew.thompson.a@gmail.com
 [core]
 	editor = nvim
+# Per-machine overrides (e.g. user.name), not managed by chezmoi. Keep this last.
+[include]
+	path = ~/.gitconfig.local
